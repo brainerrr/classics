@@ -1,0 +1,7 @@
+<h1><%= @car.brand @car.model @car.year %></h1>
+<h1><% @cars.each do |car| %></h1>
+  <%= car.movie.title %>
+<% end  %>
+<%= link_to "back to all cars", cars_path %>
+<%= link_to "Create Car", new_car_path(@car) %>
+<%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
