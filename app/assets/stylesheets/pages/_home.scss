@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+.wrapper {
+  background-image: url(https://d39a3h63xew422.cloudfront.net/wp-content/uploads/2018/05/20040149/Autoleven-Roelofs-Engineering-1964-Ferrari-250-GTO-Replica-25-2880x1920.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 120px;
+  height: 80vh;
+}
+
+h1, h2 {
+ color: white;
+ text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.all-btn {
+  background-color: #4A4A4A;
+  color: white;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
