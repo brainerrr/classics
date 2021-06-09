@@ -1,0 +1,27 @@
+.car-overview {
+  h1 {
+    color: gray;
+  }
+}
+.img-cont {
+  width: 100%;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+}
+
+.car-image {
+  width: 100%;
+  objectfit: cover;
+}
+
+
+.price {
+  color: gray;
+  text-align: left;
+}
+
+.rating {
+  color: gray;
+  text-align: right;
+}
