@@ -1,6 +1,35 @@
+<div class="px-5 pt-5">
+  <div class="car-overview mb-2">
+    <h1 class="title">
+      <%= @car.year %> <%= @car.brand %> <%= @car.model %>
+    </h1>
+  </div>
+  <div class="w-75 mr-auto ml-auto">
+    <div  class="img-cont mb-4">
+      <%= cl_image_tag @car.photo.key, class:"car-image" %>
+    </div>
 
 
-    <%= @car.model %>
-<%= link_to "back to all cars", cars_path %>
-<%= link_to "Create Car", new_car_path(@car) %>
-<%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="price-rating mb-2" style="display: flex; justify-content: space-around;" >
+      <h2 class="price">Price per day: <%= @car.price_day%></h2>
+      <h2 class="rating"> Rating: 5 Stars </h2>
+    </div>
+
+    <div style="display: flex;">
+      <p><%= @car.availability %></p>
+      <p>Currently Availiable</p>
+    </div>
+
+
+    <div class="car_description">
+      <p><%= @car.description %></p>
+      <p>"1989 911 Silver Anniversary edition commemorating 25 years of the 911. This is a high mileage but extremely well cared for example of the last year (G-series) air cooled 911 produced from 1974-1989. Completely stock except for the OEM 911 Turbo S steering wheel, this car will provide the driver with a unique and visceral driving experience only an older 911 can offer. Schedule your drive in this automotive icon today."</p>
+    </div>
+  </div>
+  <%= link_to "Back to all cars", cars_path %>
+</div>
+
+
+
+
+
