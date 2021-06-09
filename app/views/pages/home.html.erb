@@ -41,6 +41,29 @@
 </div>
 <div class='favourites'>
   <h1>Our member's most driven cars</h1>
+  <div class="px-4">
+  <div class="cards">
+    <% @cars[0..3].each do |car| %>
+      <div class="card-car">
+        <div>
+          <%= link_to car_path(car) do %>
+          <%= cl_image_tag car.photo.key, class: "card-car-img" %>
+          <% end %>
+        </div>
+
+        <div class="card-car-infos">
+          <div>
+            <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
+            <% 5.times do %>
+             <i class="far fa-star"></i>
+            <% end %>
+          </div>
+          <p class="card-car-pricing"><strong>£<%= car.price_day %></strong>/Day</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
 
