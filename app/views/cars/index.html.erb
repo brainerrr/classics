@@ -4,59 +4,21 @@
       <div class="card-car">
         <div>
           <%= link_to car_path(car) do %>
-          <%= image_tag "https://d39a3h63xew422.cloudfront.net/wp-content/uploads/2018/05/20040149/Autoleven-Roelofs-Engineering-1964-Ferrari-250-GTO-Replica-25-2880x1920.jpg", class: "card-car-img" %>
+          <%= cl_image_tag car.photo.key, class: "card-car-img" %>
           <% end %>
         </div>
 
         <div class="card-car-infos">
           <div>
             <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
+            <% 5.times do %>
+             <i class="far fa-star"></i>
+            <% end %>
           </div>
           <p class="card-car-pricing"><strong>£<%= car.price_day %></strong>/Day</p>
-          </div>
         </div>
-        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-
-
-<!-- <div class="link_cars" class="btn btn-overline-danger">, cars_path #%></div>
- -->
- <!-- <div class="link_create_cars"><%#=# link_to "Create Car", new_car_path(@car), class:"btn btn-flat" %></div>
- -->
-
-
-
-
-
-
-
-
-
-<!--
-<h1>Mes voitures:</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-6" class="cards">
-        <ul class="car_cars" style="car-style-type: none;">
-          <li>
-            <%# @cars.each do |car| %>
-              <div class="thumbnail">
-                <img src="#" class="car_img">
-                <div class ="class_category">
-                  <h3><# car.brand %></h3>
-                  <div class="car_rating-count">(5)</div>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nibh nisl, vestibulum faucibus erat ac, maximus elementum orci."
-                    </p>
-                    <span class="cars_price-currency">$ 195</span>
-                    <span class="car__price-period">per<br> day</span>
-                </div>
-              </div>
-            <%# end %>
-          </li>
-        </ul>
-    </div>
-  </div>
-</div>
- -->
