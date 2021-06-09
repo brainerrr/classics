@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 20px;
 }
 
 .card-car {
@@ -20,4 +21,9 @@
   height: 180px;
   width: 100%;
   object-fit: cover;
+}
+
+.header {
+  margin-top: 20px;
+  color: #485156;
 }
