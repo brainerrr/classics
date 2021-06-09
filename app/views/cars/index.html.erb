@@ -5,7 +5,7 @@
       <div class="card-car">
         <div>
           <%= link_to car_path(car) do %>
-          <%= image_tag "https://d39a3h63xew422.cloudfront.net/wp-content/uploads/2018/05/20040149/Autoleven-Roelofs-Engineering-1964-Ferrari-250-GTO-Replica-25-2880x1920.jpg", class: "card-car-img" %>
+          <%= cl_image_tag car.photo.key, class: "card-car-img" %>
           <% end %>
         </div>
 
