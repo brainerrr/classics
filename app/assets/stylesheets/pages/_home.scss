@@ -17,9 +17,9 @@ p {
 }
 
 .all-btn {
-  background-color: #4A4A4A;
+  background-color: #064125;
   color: white;
-  border: 1px solid #4A4A4A;
+  border: 1px solid #064125;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -27,7 +27,7 @@ p {
   text-align: center;
 }
 .all-btn:hover {
-  color: darkgrey;
+  color: #91AA9D;
 }
 
 .button-wrapper {
@@ -39,7 +39,9 @@ p {
 .favourites h1 {
   color: black;
 }
-.footer-clean {
-  background-color: #064125;
-  color: white;
+
+.margins {
+  margin: 100px 0px;
 }
+
+
