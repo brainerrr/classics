@@ -1,20 +1,23 @@
-// .container {
-//   overflow: hidden;
-//   height: 120px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   display: flex;
-//   align-items: center;
-// }
-
-.list_cars {
-  margin: 20px;
-  display: flex;
-  align-items: center;
+.container {
+  overflow: hidden;
+  height: auto;
 }
 
 
-h1{
-  display: flex;
-  justify-content: center;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-car {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-car-img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
 }

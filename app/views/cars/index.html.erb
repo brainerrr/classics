@@ -1,66 +1,65 @@
-<h1>Mes voitures:</h1>
-<div class="container">
-  <div class="col-6" class="cards">
-      <ul class="list_cars" style="list-style-type: none;">
-        <li>
-          <% @cars.each do |car| %>
-            <div class="thumbnail">
-              <img src="https://ds-prod-files.s3.us-east-2.amazonaws.com/cars_images/2050/1562000141_phpPUuCuR.jpg.small.jpg" class="car__img">
-              <div class ="description">
-                <h3><%= car.brand %></h3>
-                  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nibh nisl, vestibulum faucibus erat ac, maximus elementum orci."
-                  </p>
-              </div>
-            </div>
-          <% end  %>
-        </li>
-      </ul>
+<h1>Mes cares:</h1>
+<div class="px-4">
+  <div class="cards">
+    <% @cars.each do |car| %>
+      <div class="card-car">
+        <div>
+          <%= link_to car_path(car) do %>
+          <%= image_tag "https://d39a3h63xew422.cloudfront.net/wp-content/uploads/2018/05/20040149/Autoleven-Roelofs-Engineering-1964-Ferrari-250-GTO-Replica-25-2880x1920.jpg", class: "card-car-img" %>
+          <% end %>
+        </div>
+
+        <div class="card-car-infos">
+          <div>
+            <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
+          </div>
+          <p class="card-car-pricing"><strong>£<%= car.price_day %></strong>/Day</p>
+          </div>
+        </div>
+
+
+        <% end %>
   </div>
 </div>
 
 
 
-<%= link_to "back to all cars", cars_path %>
-<%= link_to "Create Car", new_car_path(@car) %>
+<!-- <div class="link_cars" class="btn btn-overline-danger">, cars_path #%></div>
+ -->
+ <!-- <div class="link_create_cars"><%#=# link_to "Create Car", new_car_path(@car), class:"btn btn-flat" %></div>
+ -->
 
 
 
-<div class="car__top">
-  <img src="https://ds-prod-files.s3.us-east-2.amazonaws.com/cars_images/2050/1562000141_phpPUuCuR.jpg.small.jpg" alt="1989 Porsche 911" class="car__img">
-  <h3 class="car__name car__name--home">1989 Porsche 911</h3>
-</div>
 
 
-<div class="car__bottom car__bottom--home">
-                                <div class="car__bottom-inner car__bottom-inner--top">
-                                    <div class="car__bottom-left car__bottom-left--home">
-                                        <div class="car__rating car__rating--home">
-   <div class="rating-star car__rating-star rating-star--full"></div>
-    <div class="rating-star car__rating-star rating-star--full"></div>
-     <div class="rating-star car__rating-star rating-star--full"></div>
-      <div class="rating-star car__rating-star rating-star--full"></div>
-      <div class="rating-star car__rating-star rating-star--full"></div>
-       </div>
-        <div class="car__rating-count">(5)</div>
-                                    </div>
-                                    <div class="car__bottom-right car__bottom-right--home">
-                                        <div class="car__price car__price--home">
-                                            <span class="car__price-num">
-                                                <span class="car__price-currency">$</span>195                                            </span>
-                                            <span class="car__price-period">per<br> day</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="car__bottom-location w-eq-height"><strong>Sterling</strong>, VA</div>
-                                <div class="car__bottom-inner">
-                                    <div class="car__bottom-left car__bottom-left--home">
-                                                          <span class="tooltip tooltip--car">Driving rental</span>
-                                            </span>
-                                            <span class="tooltip tooltip--car">Event rental</span>
-                        </span>
-                                                                                </div>
-                                    <div class="car__bottom-right car__bottom-right--home">
-                                        <div class="car__bottom-right-icon-wrap">
+
+
+
+
+<!--
+<h1>Mes voitures:</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6" class="cards">
+        <ul class="car_cars" style="car-style-type: none;">
+          <li>
+            <%# @cars.each do |car| %>
+              <div class="thumbnail">
+                <img src="#" class="car_img">
+                <div class ="class_category">
+                  <h3><# car.brand %></h3>
+                  <div class="car_rating-count">(5)</div>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nibh nisl, vestibulum faucibus erat ac, maximus elementum orci."
+                    </p>
+                    <span class="cars_price-currency">$ 195</span>
+                    <span class="car__price-period">per<br> day</span>
+                </div>
+              </div>
+            <%# end %>
+          </li>
+        </ul>
     </div>
   </div>
 </div>
+ -->
