@@ -11,8 +11,9 @@
 
 
     <div class="price-rating mb-2" style="display: flex; justify-content: space-around;" >
-      <h2 class="price">Price per day: <%= @car.price_day%></h2>
-      <h2 class="rating"> Rating: 5 Stars </h2>
+      <h2 class="price">Price per day: <%= @car.price_day %>€</h2>
+      <button class="btn btn-outline-secondary"><%= link_to "Book now", new_car_booking_path(@car) %></button>
+      <h2 class="rating"> Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
     </div>
 
     <div style="display: flex;">
@@ -26,7 +27,7 @@
       <p>"1989 911 Silver Anniversary edition commemorating 25 years of the 911. This is a high mileage but extremely well cared for example of the last year (G-series) air cooled 911 produced from 1974-1989. Completely stock except for the OEM 911 Turbo S steering wheel, this car will provide the driver with a unique and visceral driving experience only an older 911 can offer. Schedule your drive in this automotive icon today."</p>
     </div>
   </div>
-  <%= link_to "Back to all cars", cars_path %>
+
 </div>
 
 
