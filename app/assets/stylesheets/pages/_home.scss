@@ -4,12 +4,14 @@
   background-size: cover;
   background-position: center;
   padding: 120px;
-  height: 80vh;
+  height: calc(100vh - 92px);
+
 }
 
 h1, h2 {
  color: white;
  text-align: center;
+ font-family: 'Work Sans', sans-serif;
 }
 
 p {
@@ -25,9 +27,11 @@ p {
   font-weight: lighter;
   transition: opacity 0.3s ease;
   text-align: center;
+
 }
 .all-btn:hover {
   color: #91AA9D;
+  text-decoration: none;
 }
 
 .button-wrapper {
@@ -38,10 +42,76 @@ p {
 
 .favourites h1 {
   color: black;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .margins {
   margin: 100px 0px;
 }
 
+.center-center--list-info{
+  margin-top: 100px;
+}
+
+
+.cards-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  margin-top: 20px;
+  padding: 70px;
+}
+
+
+.card-car-home {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-car-img-home {
+  object-fit: cover;
+  object-position: 100%;
+  height: 50vh;
+  width: 100%;
+}
+
+
+.card-car-home .card-car-infos-home {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-car-pricing-home {
+  font-size: 15px;
+}
+
+.card-car-home {
+  transition: transform .5s;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+    content: '';
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.086, 1.106, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
 

@@ -8,4 +8,3 @@ class Car < ApplicationRecord
   validates :brand, :model, :year, :price_day, presence: true
   validates :category, inclusion: { in: CATEGORIES }
 end
-

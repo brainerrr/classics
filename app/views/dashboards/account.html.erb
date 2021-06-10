@@ -11,7 +11,6 @@
     <a class="nav-link" data-toggle="tab" href="#settings">Settings of your cars</a>
   </li>
 </ul>
-
 <div class="tab-content">
   <div id="mybookings" class="tab-pane active">
     <% @my_bookings.each do |booking| %>
@@ -19,7 +18,6 @@
     <% end %>
   </div>
   <div id="requests" class="tab-pane">
-    <h1>requests</h1>
     <% @all_bookings.each do |booking| %>
       <% if current_user == booking.car.user %>
         <p>Do you accept the booking from <%= booking.start_date %> until <%= booking.end_date %> for the <%= booking.car.model %> <%= booking.car.brand %> ?</p>
@@ -27,6 +25,5 @@
     <% end %>
   </div>
   <div id="settings" class="tab-pane">
-
   </div>
 </div>
