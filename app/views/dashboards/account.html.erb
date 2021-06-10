@@ -1,8 +1,31 @@
 <h1>My Account</h1>
-<% @my_bookings.each do |booking| %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <%= booking.car.model %>
-  <%= booking.car.brand %>
-<% end %>
 
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#mybookings">My Bookings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#requests">Requests for my cars</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#settings">Settings of your cars</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div id="mybookings" class="tab-pane active">
+    <% @my_bookings.each do |booking| %>
+      <p>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %> is confirmed from <%= booking.start_date %> until <%= booking.end_date %>. </p>
+    <% end %>
+  </div>
+  <div id="requests" class="tab-pane">
+    <% @all_bookings.each do |booking| %>
+      <% if current_user == booking.car.user %>
+        <p>Do you accept the booking from <%= booking.start_date %> until <%= booking.end_date %> for the <%= booking.car.model %> <%= booking.car.brand %> ?</p>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="settings" class="tab-pane">
+  </div>
+</div>
