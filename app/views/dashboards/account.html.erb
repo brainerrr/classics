@@ -17,8 +17,10 @@
       <div class="car-booking">
           <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
         <div class="car-booking-infos">
-          <p>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %>
-            is confirmed from <%= booking.start_date %> until <%= booking.end_date %>. </p>
+          <h4>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %>
+            is confirmed from <%= booking.start_date %> until <%= booking.end_date %>
+            for a total of <%= (booking.end_date.to_date - booking.start_date.to_date).to_i  %>
+             days. Price is <%= (((booking.end_date.to_date - booking.start_date.to_date).to_i ) * booking.car.price_day).to_i %>€ </h4>
           </div>
       </div>
     <% end %>
@@ -30,6 +32,7 @@
           <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
         <div class="car-booking-infos">
           <p><strong>Do you accept the booking from <%= booking.start_date %> until <%= booking.end_date %> for the <%= booking.car.model %> <%= booking.car.brand %> ?</strong></p>
+          <p><%= ((booking.end_date.to_date - booking.start_date.to_date).to_i ) * booking.car.price_day %></p>
         </div>
       </div>
       <% end %>
