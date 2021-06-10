@@ -2,9 +2,12 @@ require "open-uri"
 
 Car.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 p "Creating Users..."
 User.create!(first_name: "John", last_name: "Cena", email: "aaaa@gmail.com", password: "password")
+User.create!(first_name: "Mary", last_name: "Poppins", email: "maryp@gmail.com", password: "password")
+User.create!(first_name: "Fred", last_name: "Flintstone", email: "ff@gmail.com", password: "password")
 
 
 p "Creating Cars..."
@@ -67,5 +70,9 @@ corvette_pic = URI.open("https://i2.wp.com/radical-mag.com/wp-content/uploads/20
 corvette = Car.create!(brand: "Chevrolet", model: "Corvette", year: "2965", price_day: 180 , category: "American", description: "The Chevrolet Corvette (C2) is the second generation of the Chevrolet Corvette sports car, produced by the Chevrolet division of General Motors for the 1963 to 1967 model years.", user: User.first)
 corvette.photo.attach(io: corvette_pic, filename: 'nes.png', content_type: 'image/png')
 corvette.save
+
+p "Creating Bookings..."
+Booking.create!(start_date: Date.new(2021,06,10), end_date: Date.new(2021,06,13), user: User.last, car: Car.take)
+Booking.create!(start_date: Date.new(2021,06,15), end_date: Date.new(2021,06,18), user: User.last, car: Car.take)
 
 p "Finished seeding"

@@ -1,0 +1,8 @@
+<h1>My Account</h1>
+<% @my_bookings.each do |booking| %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <%= booking.car.model %>
+  <%= booking.car.brand %>
+<% end %>
+
