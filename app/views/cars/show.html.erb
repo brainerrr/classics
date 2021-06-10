@@ -1,29 +1,20 @@
-<div class="px-5 pt-5">
   <div class="car-overview mb-2">
     <h1 class="title" style="margin-bottom: 40px; font-size: 60px; font-weight: bold">
       <%= @car.year %> <%= @car.brand %> <%= @car.model %>
     </h1>
   </div>
+  <div class="img-cont mb-4" style="background-image: url('<%= cl_image_path(@car.photo.key) %>'); height: 55vh; background-size: cover; width: 100vw; height: 100vh; background-repeat: no-repeat">
+  </div>
+<div class="px-5 pt-5">
   <div class="w-75 mr-auto ml-auto">
-    <div  class="img-cont mb-4">
-      <%= cl_image_tag @car.photo.key, class:"car-image" %>
-    </div>
 
 
     <div class="price-rating mb-2" style="display: flex; justify-content: space-between;" >
       <h2 class="price" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= @car.price_day.to_i %>€</h2>
-      <button class="booknow" style="
-      color: black;
-  padding: 8px 24px;
-  border-radius: 25px;
-  background: #064125;
-  transition: background 0.3s ease;
-  width: 300px;
-  text-decoration: none;
-"><%= link_to "Book now", new_car_booking_path(@car) %></button>
+      <%= link_to "Book now", new_car_booking_path(@car), class:"btnprimary" %>
       <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold"> Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
     </div>
-<br>
+    <br>
     <div style="display: flex;">
       <p><%= @car.availability %></p>
       <p>Currently available</p>
