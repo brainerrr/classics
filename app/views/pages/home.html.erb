@@ -3,11 +3,11 @@
     <h1>Welcome to Classics</h1>
     <h2>The drivers club for vintage car enthusiasts</h2>
     <div class='button-wrapper'>
-      <%= link_to "See all our cars", cars_path , class: "all-btn" %>
+      <%= link_to "Our Classics", cars_path , class: "all-btn"%>
     </div>
 </div>
 
-<div class='center center--list-info' style='display: flex; justify-content: space-around; padding: 25px'>
+<div class='center center--list-info' style='display: flex; justify-content: space-around; padding: 100px'>
     <div class='list-info__section' style='background-color: #E9ECEF; text-align: center; padding: 15px' >
       <h3 class='list-info__title' style='font-size: 30px'>For drivers, by drivers. Seeking excellence.</h3>
       <div class='list-info__txt cke-list'>
@@ -41,38 +41,27 @@
 </div>
 <div class='favourites'>
   <h1>Our member's most driven cars</h1>
-  <div class="px-4">
-  <div class="cards">
+  <div class="px-4-home">
+  <div class="cards-home">
     <% @cars[0..3].each do |car| %>
-      <div class="card-car">
+      <div class="card-car-home">
         <div>
           <%= link_to car_path(car) do %>
-          <%= cl_image_tag car.photo.key, class: "card-car-img" %>
+          <%= cl_image_tag car.photo.key, class: "card-car-img-home" %>
           <% end %>
         </div>
 
-        <div class="card-car-infos">
+        <div class="card-car-infos-home">
           <div>
             <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
             <% 5.times do %>
              <i class="far fa-star"></i>
             <% end %>
           </div>
-          <p class="card-car-pricing"><strong>£<%= car.price_day %></strong>/Day</p>
+          <p class="card-car-pricing-home"><strong>£<%= car.price_day %></strong>/Day</p>
         </div>
       </div>
     <% end %>
   </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
