@@ -5,3 +5,20 @@ a {
 p {
   font-size: 18px;
 }
+
+.btnprimary {
+  background-color: #064125;
+  color: white;
+  border: 1px solid #064125;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  width: 300px;
+}
+
+.btnprimary:hover {
+  text-decoration: none;
+  color: #135936;
+}
