@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(bookings_params)
     @booking.car = @car
     @booking.user = current_user
-    if @booking.save!
+    if @booking.save
       redirect_to car_path(@car)
       @booking.status = "Pending"
     else
