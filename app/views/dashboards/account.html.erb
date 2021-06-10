@@ -18,7 +18,8 @@
           <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
         <div class="car-booking-infos">
           <p>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %>
-            is confirmed from <%= booking.start_date %> until <%= booking.end_date %>. </p>
+            is confirmed from <%= booking.start_date %> until <%= booking.end_date %>
+            for a total of <%= (booking.end_date.to_date - booking.start_date.to_date).to_i  %> days.</p>
           </div>
       </div>
     <% end %>
