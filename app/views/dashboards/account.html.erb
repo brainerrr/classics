@@ -14,17 +14,71 @@
 <div class="tab-content">
   <div id="mybookings" class="tab-pane active">
     <% @my_bookings.each do |booking| %>
-      <p>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %> is confirmed from <%= booking.start_date %> until <%= booking.end_date %>. </p>
+      <div class="car-booking">
+          <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
+        <div class="car-booking-infos">
+          <p>Your Booking for the <%= booking.car.brand %> <%= booking.car.model %>
+            is confirmed from <%= booking.start_date %> until <%= booking.end_date %>. </p>
+          </div>
+      </div>
     <% end %>
   </div>
   <div id="requests" class="tab-pane">
     <% @all_bookings.each do |booking| %>
       <% if current_user == booking.car.user %>
-        <p>Do you accept the booking from <%= booking.start_date %> until <%= booking.end_date %> for the <%= booking.car.model %> <%= booking.car.brand %> ?</p>
+      <div class="car-booking">
+          <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
+        <div class="car-booking-infos">
+          <p><strong>Do you accept the booking from <%= booking.start_date %> until <%= booking.end_date %> for the <%= booking.car.model %> <%= booking.car.brand %> ?</strong></p>
+        </div>
+      </div>
       <% end %>
     <% end %>
   </div>
   <div id="settings" class="tab-pane">
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
 
