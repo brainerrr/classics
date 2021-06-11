@@ -1,3 +1,13 @@
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <% @sum = 0 %>
+  <% @count = 0 %>
+  <% @avg = 0 %>
+  <% @car.bookings.each do |booking| %>
+  <% @count += 1 %>
+  <% @sum += booking.review.rating %>
+  <% @avg = @sum / @count %>
+  <% end %>
+
   <div class="car-overview mb-2">
     <h1 class="title" style="margin-top: 40px; margin-bottom: 40px; font-size: 60px;">
       <%= @car.year %> <%= @car.brand %> <%= @car.model %>
@@ -14,7 +24,15 @@
     <div class="price-rating mb-2" style="display: flex; justify-content: space-between;" >
       <h2 class="price" id='jump'style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
       <%= link_to "Book now", new_car_booking_path(@car), class:"btnprimary" %>
-      <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold"> Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
+      <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">
+        <% if @count > 0 %>
+          <span class="heading" style="margin-left: 20px">User Rating : </span>
+              <% 5.times do |i|  %>
+                <span class="fa fa-star <%= "checked" if i + 1 <= @avg  %>"></span>
+              <% end %>
+        <% else %>
+        Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
+        <% end %>
     </div>
     <br>
     <div style="display: flex;">
@@ -29,10 +47,17 @@
 
     <div style="text-align:  left">
       <h3>Recent Reviews</h3>
+
       <% @car.bookings.each do |booking| %>
         <% if booking.review %>
-          <h6><%= booking.user.first_name %> <%= booking.user.last_name %> - <%= booking.review.comment %> Rating: <%= booking.review.rating %></h6>
+          <h6><%= booking.user.first_name %> <%= booking.user.last_name %> - <%= booking.review.comment %>
+            <span class="heading" style="margin-left: 20px">User Rating : </span>
+            <% 5.times do |i|  %>
+              <span class="fa fa-star <%= "checked" if i + 1 <= booking.review.rating  %>"></span>
+            <% end %>
+         </h6>
         <% end %>
+
       <% end %>
     </div>
 

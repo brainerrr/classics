@@ -56,7 +56,7 @@
              <i class="far fa-star"></i>
             <% end %>
           </div>
-          <p class="card-car-pricing-home"><strong>£<%= car.price_day %></strong>/Day</p>
+          <p class="card-car-pricing-home"><strong><%= car.price_day.to_i %>€</strong>/Day</p>
         </div>
       </div>
     <% end %>
