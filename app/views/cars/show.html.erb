@@ -24,11 +24,14 @@
     <div class="car_description" >
       <p style="text-align: justify; margin-bottom: 80px"><%= @car.description %></p>
     </div>
+
+    <div style="text-align:  left">
+      <h3>Recent Reviews</h3>
+      <% @car.bookings.each do |booking| %>
+        <% if booking.review %>
+          <h6><%= booking.user.first_name %> <%= booking.user.last_name %> - <%= booking.review.comment %> Rating: <%= booking.review.rating %></h6>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-
 </div>
-
-
-
-
-
