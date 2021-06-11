@@ -25,4 +25,5 @@ class Booking < ApplicationRecord
       errors.add(:start_date, "cannot be end date")
     end
   end
+
 end
