@@ -14,13 +14,15 @@
     </h1>
   </div>
   <div class="img-cont mb-4" style="background-image: url('<%= cl_image_path(@car.photo.key) %>');">
+   <!--  <a href="#jump">linked text</a> -->
+    <a href="#jump" style="font-size: 85px; margin-top: 739px; color: #065224"><i class="fas fa-angle-double-down"></i></a>
   </div>
 <div class="px-5 pt-5">
   <div class="w-75 mr-auto ml-auto">
 
 
     <div class="price-rating mb-2" style="display: flex; justify-content: space-between;" >
-      <h2 class="price" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
+      <h2 class="price" id='jump'style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
       <%= link_to "Book now", new_car_booking_path(@car), class:"btnprimary" %>
       <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">
         <% if @count > 0 %>
@@ -58,5 +60,46 @@
 
       <% end %>
     </div>
+
+
+
+    <div class='recommendations'>
+      <div class="change-show" style="text-align:center;">
+        <h2 style="font-size: px">Our Recommendations</h2>
+      </div>
+      <div class="px-4-show">
+      <div class="cards-show">
+        <% @cars[0..3].map do |car| %>
+          <div class="card-car-show">
+            <div>
+              <%= link_to car_path(car) do %>
+              <%= cl_image_tag car.photo.key, class: "card-car-img-show" %>
+              <% end %>
+            </div>
+
+            <div class="card-car-infos-show">
+              <div>
+                <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
+                <% 5.times do %>
+                 <i class="far fa-star"></i>
+                <% end %>
+              </div>
+              <p class="card-car-pricing-show"><strong>£<%= car.price_day %></strong>/Day</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
