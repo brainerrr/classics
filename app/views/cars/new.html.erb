@@ -1,5 +1,5 @@
 <div class='container col-4'>
-  <h1>Add your classic car</h1>
+  <h1 style="color: #064124; font-size: 40px; margin: 40px 0px;"><strong>Add your classic car</strong></h1>
   <%= simple_form_for @car do |f| %>
     <%= f.input :brand %>
     <%= f.input :model %>
@@ -8,6 +8,6 @@
     <%= f.input :category, collection: Car::CATEGORIES   %>
     <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"create-btn"  %>
   <% end %>
 </div>
