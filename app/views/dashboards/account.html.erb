@@ -9,7 +9,11 @@
     <a class="nav-link" data-toggle="tab" href="#settings">Your car settings</a>
   </li>
 </ul>
+
 <div class="tab-content">
+
+
+
   <div id="mybookings" class="tab-pane active">
     <% @my_bookings.each do |booking| %>
       <div class="car-booking">
@@ -19,23 +23,21 @@
           <h6><strong><%= booking.start_date %></strong> until <strong><%= booking.end_date %></strong> </h6>
           <h6>Total period : <%= (booking.end_date.to_date - booking.start_date.to_date).to_i  %> days.</h6>
           <h6>Price : <%= (((booking.end_date.to_date - booking.start_date.to_date).to_i ) * booking.car.price_day).to_i %>€ </h6>
-          </div>
-          <div style="margin-left :25px ">
-            <h6><strong>Booking status : <i class="far fa-clock"></i> <%= booking.status %> </strong> </h6>
-          </div>
-          <div style="margin-left: 500px">
-            <% if booking.review.nil? %>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-<%= booking.id %>">
-              Review this booking
-            </button>
-            <% else %>
-              <p>Review already submitted</p>
-            <% end %>
-          </div>
-
+        </div>
+        <div style="margin-left :25px ">
+          <h6><strong>Booking status : <i class="far fa-clock"></i> <%= booking.status %> </strong> </h6>
+        </div>
+        <div style="margin-left: 500px">
+          <% if booking.review.nil? %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-<%= booking.id %>">
+            Review this booking
+          </button>
+          <% else %>
+            <p>Review already submitted</p>
+          <% end %>
+        </div>
       </div>
 
-  </div>
 
 
       <div class="modal fade" id="booking-<%= booking.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -61,8 +63,12 @@
           </div>
         </div>
       </div>
+
     <% end %>
   </div>
+
+
+
   <div id="requests" class="tab-pane">
     <% @all_bookings.each do |booking| %>
       <% if current_user == booking.car.user %>
@@ -83,6 +89,10 @@
       <% end %>
     <% end %>
   </div>
+
   <div id="settings" class="tab-pane">
   </div>
+
+
+
 </div>

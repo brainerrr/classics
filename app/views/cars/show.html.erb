@@ -4,7 +4,7 @@
   <% @avg = 0 %>
   <% @car.bookings.each do |booking| %>
   <% @count += 1 %>
-  <% @sum += booking.review.rating %>
+  <% @sum += booking&.review&.rating.to_i %>
   <% @avg = @sum / @count %>
   <% end %>
 
