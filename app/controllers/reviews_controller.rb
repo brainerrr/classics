@@ -1,12 +1,17 @@
 class ReviewsController < ApplicationController
   def create
-    @car =
-    @review = review.new(review_params)
-    @review.user = current_user
+    @review = Review.new(review_params)
+
     if @review.save!
-      redirect_to car_path(@car)
+      redirect_to account_path
     else
       render :new
     end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:booking_id, :comment, :rating)
   end
 end
