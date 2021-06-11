@@ -28,7 +28,7 @@ p {
   color: white;
   border: 1px solid #064125;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
   text-align: center;
@@ -52,6 +52,7 @@ p {
   margin-top: 50px;
   margin-bottom: 40px;
   background-color: #064125;
+  border-radius: 10px;
   margin-left: 70px;
   margin-right: 70px;
   border-top: 50px;
@@ -81,6 +82,7 @@ p {
   margin-top: 20px;
   padding: 70px;
   margin-bottom: 70px;
+
 }
 
 
@@ -88,6 +90,7 @@ p {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .card-car-img-home {
