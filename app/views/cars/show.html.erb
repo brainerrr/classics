@@ -10,7 +10,7 @@
 
 
     <div class="price-rating mb-2" style="display: flex; justify-content: space-between;" >
-      <h2 class="price" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= @car.price_day.to_i %>€</h2>
+      <h2 class="price" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
       <%= link_to "Book now", new_car_booking_path(@car), class:"btnprimary" %>
       <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold"> Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
     </div>
