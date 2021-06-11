@@ -33,7 +33,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Review</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -57,13 +57,13 @@
   <div id="requests" class="tab-pane">
     <% @all_bookings.each do |booking| %>
       <% if current_user == booking.car.user %>
-      <div class="car-booking">
-        <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
-        <div class="car-booking-infos">
-          <h4><%= booking.car.brand %> <%= booking.car.model %></h4>
-          <h6><strong><%= booking.start_date %></strong> until <strong><%= booking.end_date %></strong> </h6>
-          <h6>Total period : <%= (booking.end_date.to_date - booking.start_date.to_date).to_i  %> days.</h6>
-          <h6>Price : <%= (((booking.end_date.to_date - booking.start_date.to_date).to_i ) * booking.car.price_day).to_i %>€ </h6>
+        <div class="car-booking">
+          <%= cl_image_tag booking.car.photo.key, id: "car-img"%>
+          <div class="car-booking-infos">
+            <h4><%= booking.car.brand %> <%= booking.car.model %></h4>
+            <h6><strong><%= booking.start_date %></strong> until <strong><%= booking.end_date %></strong> </h6>
+            <h6>Total period : <%= (booking.end_date.to_date - booking.start_date.to_date).to_i  %> days.</h6>
+            <h6>Price : <%= (((booking.end_date.to_date - booking.start_date.to_date).to_i ) * booking.car.price_day).to_i %>€ </h6>
           </div>
           <div style="margin-left :25px ">
             <h6><strong>DO YOU ACCEPT THIS BOOKING ?  </strong> </h6>
