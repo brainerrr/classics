@@ -3,7 +3,7 @@
 <%= simple_form_for [@car, @booking] do |f| %>
   <%= f.input :start_date, as: :date, html5: true %>
   <%= f.input :end_date, as: :date, html5: true %>
-  <div class="btn btn-outline-secondary btn-sm">
+  <div class="btn btn-sm">
   <%= f.button :submit%>
   </div>
 <% end %>

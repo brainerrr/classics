@@ -1,5 +1,5 @@
 <div class='container col-4'>
-<h2>Log in</h2>
+<h2 style="color: #064124; font-size: 40px; margin: 60px 0px;"><strong>Log in</strong></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -13,8 +13,8 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="btn btn-outline-secondary btn-sm">
-    <%= f.button :submit, "Log in" %>
+  <div class="btn btn-sm">
+    <%= f.button :submit, "Log in", class: "login-btn"%>
   </div>
 <% end %>
   <div>
