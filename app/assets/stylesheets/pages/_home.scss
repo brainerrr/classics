@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   padding: 120px;
-  height: calc(100vh - 92px);
+  height: calc(100vh - 72px);
 
 }
 
@@ -12,6 +12,10 @@ h1, h2 {
  color: white;
  text-align: center;
  font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 p {
@@ -29,8 +33,10 @@ p {
   text-align: center;
 
 }
+
 .all-btn:hover {
-  color: #91AA9D;
+  color: white;
+  background-color: #135936;
   text-decoration: none;
 }
 
@@ -40,12 +46,21 @@ p {
   padding: 20px;
 }
 
-.favourites h1 {
-  color: black;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
 
+// .change {
+//   color: white;
+//   margin-top: 50px;
+//   margin-bottom: 50px;
+//   background-color: #064125;
+//   margin-left: 70px;
+//   margin-right: 70px;
+//   border-top: 50px;
+//   height: 70px;
+// }
+
+// .change h2 {
+//   text-align:center;
+// }
 .margins {
   margin: 100px 0px;
 }
@@ -61,6 +76,7 @@ p {
   grid-gap: 50px;
   margin-top: 20px;
   padding: 70px;
+  margin-bottom: 70px;
 }
 
 

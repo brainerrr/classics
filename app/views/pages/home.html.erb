@@ -1,6 +1,6 @@
 
 <div class='wrapper col-12'>
-    <h1>Welcome to Classics</h1>
+    <h1>Welcome to <strong><i>Classics</i></strong></h1>
     <h2>The drivers club for vintage car enthusiasts</h2>
     <div class='button-wrapper'>
       <%= link_to "Our Classics", cars_path , class: "all-btn"%>
@@ -9,22 +9,18 @@
 
 <div class='center center--list-info' style='display: flex; justify-content: space-around; padding: 100px'>
     <div class='list-info__section' style='background-color: #E9ECEF; text-align: center; padding: 15px' >
-      <h3 class='list-info__title' style='font-size: 30px'>For drivers, by drivers. Seeking excellence.</h3>
+      <h3 class='list-info__title' style='font-size: 30px'>For drivers, by drivers.</h3>
       <div class='list-info__txt cke-list'>
         <p style='text-align: justify; font-weight: 100'>
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
+          It's the best way to drive. With Classics, you don't have to buy or lease an oldtimer; just rent one. So whether you need to rent a car for 2 minutes or two weeks, you can get going with just one click. Find us in Barcelona, and more – for all your plans, big and small. What else?
         </p>
       </div>
     </div>
     <div class='list-info__section' style='background-color: #E9ECEF; text-align: center; padding: 15px'>
       <h3 class='list-info__title' style='font-size: 30px'>Dare to push our cars to the limit.</h3>
       <div class='list-info__txt cke-list'>
-        <p style='text-align: justify'>
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
-          Here some random text that no one in his right would read before leaving a 10m car to a stranger.
+        <p style='text-align: justify;font-weight: 100'>
+          Undertaking Classics is the vehicle rental organisation you can trust. With only the spiffiest cars, we're eager to assist you in tracking down the right rental vehicle. We generally put the client first, which is the reason you can anticipate modest rental vehicles as well as five-star administration. So regardless of whether you're on vacation, on your own or just want to unwind from daily stress... - visit us at one of our rental vehicle stations for an individual discussion.
         </p>
       </div>
     </div>
@@ -40,7 +36,9 @@
     </div>
 </div>
 <div class='favourites'>
-  <h1>Our member's most driven cars</h1>
+  <div class="change">
+    <h2>Our members' most driven cars</h2>
+  </div>
   <div class="px-4-home">
   <div class="cards-home">
     <% @cars[0..3].each do |car| %>
