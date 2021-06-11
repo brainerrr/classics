@@ -4,13 +4,15 @@
     </h1>
   </div>
   <div class="img-cont mb-4" style="background-image: url('<%= cl_image_path(@car.photo.key) %>');">
+   <!--  <a href="#jump">linked text</a> -->
+    <a href="#jump" style="font-size: 85px; margin-top: 739px; color: #065224"><i class="fas fa-angle-double-down"></i></a>
   </div>
 <div class="px-5 pt-5">
   <div class="w-75 mr-auto ml-auto">
 
 
     <div class="price-rating mb-2" style="display: flex; justify-content: space-between;" >
-      <h2 class="price" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
+      <h2 class="price" id='jump'style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold">Price per day: <%= (@car.price_day).to_i %>€</h2>
       <%= link_to "Book now", new_car_booking_path(@car), class:"btnprimary" %>
       <h2 class="rating" style="font-size: 20px; color: #064125; margin-top: 10px; font-weight: bold"> Rating: <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </h2>
     </div>
