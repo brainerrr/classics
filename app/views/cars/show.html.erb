@@ -33,5 +33,46 @@
         <% end %>
       <% end %>
     </div>
+
+
+
+    <div class='recommendations'>
+      <div class="change-show" style="text-align:center;">
+        <h2 style="font-size: px">Our Recommendations</h2>
+      </div>
+      <div class="px-4-show">
+      <div class="cards-show">
+        <% @cars[0..3].map do |car| %>
+          <div class="card-car-show">
+            <div>
+              <%= link_to car_path(car) do %>
+              <%= cl_image_tag car.photo.key, class: "card-car-img-show" %>
+              <% end %>
+            </div>
+
+            <div class="card-car-infos-show">
+              <div>
+                <h6><%= car.year %> <%= car.brand %> <%= car.model %></h6>
+                <% 5.times do %>
+                 <i class="far fa-star"></i>
+                <% end %>
+              </div>
+              <p class="card-car-pricing-show"><strong>£<%= car.price_day %></strong>/Day</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
