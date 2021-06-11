@@ -1,9 +1,9 @@
   <div class="car-overview mb-2">
-    <h1 class="title" style="margin-bottom: 40px; font-size: 60px; font-weight: bold">
+    <h1 class="title" style="margin-top: 40px; margin-bottom: 40px; font-size: 60px;">
       <%= @car.year %> <%= @car.brand %> <%= @car.model %>
     </h1>
   </div>
-  <div class="img-cont mb-4" style="background-image: url('<%= cl_image_path(@car.photo.key) %>'); height: 55vh; background-size: cover; width: 100vw; height: 100vh; background-repeat: no-repeat">
+  <div class="img-cont mb-4" style="background-image: url('<%= cl_image_path(@car.photo.key) %>');">
   </div>
 <div class="px-5 pt-5">
   <div class="w-75 mr-auto ml-auto">
